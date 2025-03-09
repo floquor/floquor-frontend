@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 暗色主题变量 */
+  --menu-background: #2d2d2d;
+  --menu-title-background: #424242;
+  --menu-hover: #3d3d3d;
+  --menu-border: #4d4d4d;
+  --text-primary: #ffffff;
+  --input-border: #666666;
+
+  --node-background: #2d2d2d;
+  --node-border: #666666;
+  --handle-background: #cccccc;
+  --node-selected-border: #ffffff;
+}
+
+/* 设置页面背景默认为黑色 */
+body {
+  background-color: #000000;
+}
+
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px var(--node-selected-border);
+}
+
+.react-flow__edge path {
+  stroke-width: 1.5px;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5, 5;
+  stroke-width: 1.5px;
+  transition: stroke-width 0.2s ease;
+  stroke: #ffffff;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke-width: 4px;
+}
