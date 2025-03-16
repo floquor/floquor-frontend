@@ -72,7 +72,7 @@ const shouldEdgeChangeBeSaved = (change: EdgeChange) => {
 
 function Flow() {
   const reactFlowInstance = useReactFlow();
-  const { nodes: initialStateNodes, edges: initialStateEdges } = getInitialState();
+  const { nodes: initialStateNodes, edges: initialStateEdges } = useMemo(() => getInitialState(), []);
   const [nodes, setNodes, onNodesChange] = useNodesState<Node<NodeData>>(initialStateNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialStateEdges);
   const [saveHistoryType, setSaveHistoryType] = useState<SaveHistoryType>(SaveHistoryType.NONE);
